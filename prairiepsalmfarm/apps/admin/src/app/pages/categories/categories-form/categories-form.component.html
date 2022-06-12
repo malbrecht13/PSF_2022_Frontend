@@ -1,0 +1,50 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card [header]="editMode ? 'Update Category' : 'Add Category'" [subheader]="'You can ' + (editMode ? 'edit ' : 'add ') +  'categories here'">
+    <div class="grid">
+      <div class="col-12 mb-5">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"></div>
+          <div class="p-toolbar-group-right">
+            <p-button
+              [styleClass]="editMode ? 'p-button-help mr-4' : 'p-button-primary mr-4'"
+              [label]="editMode ? 'Update' : 'Create'"
+              icon="pi pi-plus"
+              (click)="onSubmit()"
+            ></p-button>
+            <p-button styleClass="p-button-secondary"
+            label="Cancel"
+            icon="pi pi-arrow-circle-left"
+            (click)="cancel()"
+            >
+            </p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-12">
+        <form [formGroup]="form">
+          <div class="formgrid grid">
+              <div class="field col">
+                <label for="name">Name</label><br>
+                <input formControlName="name" id="name" type="text" pInputText /><br/>
+                <small *ngIf="categoryForm['name'].invalid && categoryForm['name'].dirty" class="p-error">Name is required</small>
+            </div>
+            <div class="field col">
+                <label for="icon">Icon</label><br>
+                <input formControlName="icon" id="icon" type="text" pInputText/> <br/>
+                <small *ngIf="categoryForm['icon'].invalid && categoryForm['icon'].dirty" class="p-error">Icon is required</small>
+            </div>
+            <div class="field col">
+              <label for="color">Color</label><br>
+              <p-colorPicker formControlName="color"></p-colorPicker> <br/>
+              <small *ngIf="categoryForm['color'].invalid && categoryForm['color'].dirty" class="p-error">Color is required</small>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>

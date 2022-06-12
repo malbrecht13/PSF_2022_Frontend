@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "projects": {
+    "admin": "apps/admin",
+    "admin-e2e": "apps/admin-e2e",
+    "orders": "libs/orders",
+    "products": "libs/products",
+    "psf": "apps/psf",
+    "psf-e2e": "apps/psf-e2e",
+    "ui": "libs/ui",
+    "users": "libs/users"
+  }
+}
