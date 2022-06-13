@@ -9,5 +9,12 @@
     "psf-e2e": "apps/psf-e2e",
     "ui": "libs/ui",
     "users": "libs/users"
-  }
+  },
+  "budgets": [
+    {
+      "type": "initial",
+      "maximumWarning": "4mb",
+      "maximumError": "5mb"
+    }
+  ]
 }
